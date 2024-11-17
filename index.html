@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ريموت التحكم بالتلفاز عبر الأشعة تحت الحمراء</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #003366;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .remote-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 480px;
+            padding: 20px;
+        }
+
+        .numbers, .functions, .additional-functions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 18px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        button:active {
+            background-color: #003366;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .additional-functions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        /* تحسين الاستجابة للأجهزة المحمولة */
+        @media (max-width: 600px) {
+            .numbers, .functions, .additional-functions {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            button {
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            header {
+                font-size: 22px;
+            }
+        }
+
+        /* تأثير عند التمرير على الأزرار */
+        button:focus {
+            outline: none;
+            border: 2px solid #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ريموت التحكم بالتلفاز عبر الأشعة تحت الحمراء</h1>
+    </header>
+    <main>
+        <div class="remote-controls">
+            <!-- أزرار الأرقام -->
+            <div class="numbers">
+                <button onclick="sendCommand('1')">1</button>
+                <button onclick="sendCommand('2')">2</button>
+                <button onclick="sendCommand('3')">3</button>
+                <button onclick="sendCommand('4')">4</button>
+                <button onclick="sendCommand('5')">5</button>
+                <button onclick="sendCommand('6')">6</button>
+                <button onclick="sendCommand('7')">7</button>
+                <button onclick="sendCommand('8')">8</button>
+                <button onclick="sendCommand('9')">9</button>
+                <button onclick="sendCommand('0')">0</button>
+            </div>
+
+            <!-- أزرار الوظائف -->
+            <div class="functions">
+                <button onclick="sendCommand('P')">تشغيل/إطفاء</button>
+                <button onclick="sendCommand('V')">رفع الصوت</button>
+                <button onclick="sendCommand('v')">خفض الصوت</button>
+                <button onclick="sendCommand('C')">القناة التالية</button>
+                <button onclick="sendCommand('c')">القناة السابقة</button>
+                <button onclick="sendCommand('M')">كتم الصوت</button>
+                <button onclick="sendCommand('T')">مؤقت</button>
+            </div>
+
+            <!-- أزرار إضافية -->
+            <div class="additional-functions">
+                <button onclick="sendCommand('N')">الاختيار التالي</button>
+                <button onclick="sendCommand('S')">إعدادات</button>
+                <button onclick="sendCommand('L')">قائمة</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        // إرسال الأمر عبر الأشعة تحت الحمراء
+        function sendCommand(command) {
+            // هنا يمكن استخدام جافا سكربت لإرسال الأوامر عبر الأشعة تحت الحمراء.
+            // هذا الجزء سيعمل عندما تقوم بدمج صفحة الويب مع تطبيق الموبايل الذي يدعم الأشعة تحت الحمراء
+            // مثل أن يتم ربط الأزرار مع تطبيق Android عبر WebView.
+
+            if (window.Android) {
+                window.Android.sendCommand(command);  // إرسال الأمر إلى تطبيق الأندرويد
+            } else {
+                alert("تم إرسال الأمر: " + command);
+            }
+        }
+    </script>
+</body>
+</html>
